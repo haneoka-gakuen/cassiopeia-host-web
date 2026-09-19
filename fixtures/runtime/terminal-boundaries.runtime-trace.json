@@ -1,0 +1,245 @@
+{
+  "$schema": "./runtime-trace-v1.schema.json",
+  "format": "RuntimeTraceV1",
+  "version": 1,
+  "cases": [
+    {
+      "id": "watch-exact-duration-note",
+      "mode": "watch",
+      "chart": {
+        "version": 1,
+        "bpmChanges": [],
+        "signatureChanges": [],
+        "timeScaleChanges": [],
+        "notes": [
+          {
+            "id": 7,
+            "tick": 480,
+            "timeMs": 1000,
+            "beat": 1,
+            "pos": 10,
+            "size": 4,
+            "laneX": 0,
+            "width": 0.3333333333333333,
+            "operateType": 1,
+            "judgementType": 1,
+            "judgementAreaOffsetType": 0,
+            "direction": 0,
+            "critical": false,
+            "judged": true,
+            "visible": true,
+            "lineIds": [],
+            "slideAlong": false,
+            "indexInLine": null,
+            "easeL": null,
+            "easeR": null
+          }
+        ],
+        "lines": [],
+        "timeline": { "skills": [], "fever": [], "callChanges": [] },
+        "durationMs": 1000
+      },
+      "steps": [
+        {
+          "label": "duration equality does not omit or consume the tail note",
+          "action": { "op": "update", "timeMs": 1000 },
+          "expect": {
+            "events": [{ "type": "update" }],
+            "snapshot": {
+              "timeMs": 1000,
+              "durationMs": 1000,
+              "activeLongLine": false,
+              "combo": 0,
+              "fullCombo": true,
+              "allPerfect": true,
+              "perfectCombo": false,
+              "maxCombo": 0,
+              "score": 0,
+              "life": 1000,
+              "processed": 0,
+              "total": 1,
+              "lastJudgementNoteId": null,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "exclusive terminal sentinel consumes the exact tail note",
+          "action": { "op": "finish", "timeMs": 1000 },
+          "expect": {
+            "events": [
+              {
+                "type": "judgement",
+                "noteId": 7,
+                "judgement": 5,
+                "timing": 3,
+                "diffMs": 0,
+                "judgedAtMs": 1001,
+                "combo": 1,
+                "maxCombo": 1,
+                "score": 1000000,
+                "scoreDelta": 1000000,
+                "life": 1000
+              },
+              { "type": "update" }
+            ],
+            "snapshot": {
+              "timeMs": 1001,
+              "durationMs": 1000,
+              "activeLongLine": false,
+              "combo": 1,
+              "fullCombo": true,
+              "allPerfect": true,
+              "perfectCombo": true,
+              "maxCombo": 1,
+              "score": 1000000,
+              "life": 1000,
+              "processed": 1,
+              "total": 1,
+              "lastJudgementNoteId": 7,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "play-two-stage-terminal-timeout",
+      "mode": "play",
+      "chart": {
+        "version": 1,
+        "bpmChanges": [],
+        "signatureChanges": [],
+        "timeScaleChanges": [],
+        "notes": [
+          {
+            "id": 9,
+            "tick": 480,
+            "timeMs": 1000,
+            "beat": 1,
+            "pos": 10,
+            "size": 4,
+            "laneX": 0,
+            "width": 0.3333333333333333,
+            "operateType": 1,
+            "judgementType": 1,
+            "judgementAreaOffsetType": 0,
+            "direction": 0,
+            "critical": false,
+            "judged": true,
+            "visible": true,
+            "lineIds": [],
+            "slideAlong": false,
+            "indexInLine": null,
+            "easeL": null,
+            "easeR": null
+          }
+        ],
+        "lines": [],
+        "timeline": { "skills": [], "fever": [], "callChanges": [] },
+        "durationMs": 1000
+      },
+      "steps": [
+        {
+          "label": "exact duration remains an input candidate",
+          "action": { "op": "update", "timeMs": 1000 },
+          "expect": {
+            "events": [{ "type": "update" }],
+            "snapshot": {
+              "timeMs": 1000,
+              "durationMs": 1000,
+              "activeLongLine": false,
+              "combo": 0,
+              "fullCombo": true,
+              "allPerfect": true,
+              "perfectCombo": false,
+              "maxCombo": 0,
+              "score": 0,
+              "life": 1000,
+              "processed": 0,
+              "total": 1,
+              "lastJudgementNoteId": null,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "late-window crossing only enters PlayingLast",
+          "action": { "op": "update", "timeMs": 1131 },
+          "expect": {
+            "events": [{ "type": "update" }],
+            "snapshot": {
+              "timeMs": 1131,
+              "durationMs": 1000,
+              "activeLongLine": false,
+              "combo": 0,
+              "fullCombo": true,
+              "allPerfect": true,
+              "perfectCombo": false,
+              "maxCombo": 0,
+              "score": 0,
+              "life": 1000,
+              "processed": 0,
+              "total": 1,
+              "lastJudgementNoteId": null,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "following update commits Miss plus LastTiming",
+          "action": { "op": "update", "timeMs": 1131 },
+          "expect": {
+            "events": [
+              {
+                "type": "judgement",
+                "noteId": 9,
+                "judgement": 1,
+                "timing": 5,
+                "diffMs": 2147483647,
+                "judgedAtMs": 1131,
+                "combo": 0,
+                "maxCombo": 0,
+                "score": 0,
+                "scoreDelta": 0,
+                "life": 900
+              },
+              { "type": "update" }
+            ],
+            "snapshot": {
+              "timeMs": 1131,
+              "durationMs": 1000,
+              "activeLongLine": false,
+              "combo": 0,
+              "fullCombo": false,
+              "allPerfect": false,
+              "perfectCombo": false,
+              "maxCombo": 0,
+              "score": 0,
+              "life": 900,
+              "processed": 1,
+              "total": 1,
+              "lastJudgementNoteId": 9,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

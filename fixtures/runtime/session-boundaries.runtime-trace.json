@@ -1,0 +1,2741 @@
+{
+  "$schema": "./runtime-trace-v1.schema.json",
+  "format": "RuntimeTraceV1",
+  "version": 1,
+  "cases": [
+    {
+      "id": "normal-score-combo-life-and-auto-miss",
+      "mode": "play",
+      "chart": {
+        "version": 1,
+        "bpmChanges": [
+          {
+            "tick": 0,
+            "beat": 0,
+            "timeMs": 0,
+            "bpm": 120
+          }
+        ],
+        "signatureChanges": [
+          {
+            "tick": 0,
+            "beat": 0,
+            "timeMs": 0,
+            "numerator": 4,
+            "denominator": 4
+          }
+        ],
+        "timeScaleChanges": [],
+        "notes": [
+          {
+            "id": 0,
+            "tick": 480,
+            "timeMs": 1000,
+            "beat": 1,
+            "pos": 9,
+            "size": 6,
+            "laneX": 0,
+            "width": 0.5,
+            "operateType": 1,
+            "judgementType": 1,
+            "judgementAreaOffsetType": 0,
+            "direction": 0,
+            "critical": false,
+            "judged": true,
+            "visible": true,
+            "lineIds": [],
+            "slideAlong": false,
+            "indexInLine": null,
+            "easeL": null,
+            "easeR": null
+          },
+          {
+            "id": 1,
+            "tick": 960,
+            "timeMs": 2000,
+            "beat": 2,
+            "pos": 9,
+            "size": 6,
+            "laneX": 0,
+            "width": 0.5,
+            "operateType": 1,
+            "judgementType": 1,
+            "judgementAreaOffsetType": 0,
+            "direction": 0,
+            "critical": false,
+            "judged": true,
+            "visible": true,
+            "lineIds": [],
+            "slideAlong": false,
+            "indexInLine": null,
+            "easeL": null,
+            "easeR": null
+          },
+          {
+            "id": 2,
+            "tick": 1440,
+            "timeMs": 3000,
+            "beat": 3,
+            "pos": 9,
+            "size": 6,
+            "laneX": 0,
+            "width": 0.5,
+            "operateType": 1,
+            "judgementType": 1,
+            "judgementAreaOffsetType": 0,
+            "direction": 0,
+            "critical": false,
+            "judged": true,
+            "visible": true,
+            "lineIds": [],
+            "slideAlong": false,
+            "indexInLine": null,
+            "easeL": null,
+            "easeR": null
+          },
+          {
+            "id": 3,
+            "tick": 1920,
+            "timeMs": 4000,
+            "beat": 4,
+            "pos": 9,
+            "size": 6,
+            "laneX": 0,
+            "width": 0.5,
+            "operateType": 1,
+            "judgementType": 1,
+            "judgementAreaOffsetType": 0,
+            "direction": 0,
+            "critical": false,
+            "judged": true,
+            "visible": true,
+            "lineIds": [],
+            "slideAlong": false,
+            "indexInLine": null,
+            "easeL": null,
+            "easeR": null
+          },
+          {
+            "id": 4,
+            "tick": 2400,
+            "timeMs": 5000,
+            "beat": 5,
+            "pos": 9,
+            "size": 6,
+            "laneX": 0,
+            "width": 0.5,
+            "operateType": 1,
+            "judgementType": 1,
+            "judgementAreaOffsetType": 0,
+            "direction": 0,
+            "critical": false,
+            "judged": true,
+            "visible": true,
+            "lineIds": [],
+            "slideAlong": false,
+            "indexInLine": null,
+            "easeL": null,
+            "easeR": null
+          }
+        ],
+        "lines": [],
+        "timeline": {
+          "skills": [],
+          "fever": [],
+          "callChanges": []
+        },
+        "durationMs": 5000
+      },
+      "steps": [
+        {
+          "label": "normal perfect early edge clock",
+          "action": {
+            "op": "update",
+            "timeMs": 958
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "update"
+              }
+            ],
+            "snapshot": {
+              "timeMs": 958,
+              "durationMs": 5000,
+              "activeLongLine": false,
+              "combo": 0,
+              "fullCombo": true,
+              "allPerfect": true,
+              "perfectCombo": false,
+              "maxCombo": 0,
+              "score": 0,
+              "life": 1000,
+              "processed": 0,
+              "total": 5,
+              "lastJudgementNoteId": null,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "normal perfect early edge",
+          "action": {
+            "op": "tap",
+            "lane": 12,
+            "timeMs": 958
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "judgement",
+                "noteId": 0,
+                "judgement": 5,
+                "timing": 1,
+                "diffMs": -42,
+                "judgedAtMs": 958,
+                "combo": 1,
+                "maxCombo": 1,
+                "score": 200000,
+                "scoreDelta": 200000,
+                "life": 1000
+              }
+            ],
+            "snapshot": {
+              "timeMs": 958,
+              "durationMs": 5000,
+              "activeLongLine": false,
+              "combo": 1,
+              "fullCombo": true,
+              "allPerfect": true,
+              "perfectCombo": true,
+              "maxCombo": 1,
+              "score": 200000,
+              "life": 1000,
+              "processed": 1,
+              "total": 5,
+              "lastJudgementNoteId": 0,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "normal first millisecond after perfect",
+          "action": {
+            "op": "update",
+            "timeMs": 2043
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "update"
+              }
+            ],
+            "snapshot": {
+              "timeMs": 2043,
+              "durationMs": 5000,
+              "activeLongLine": false,
+              "combo": 1,
+              "fullCombo": true,
+              "allPerfect": true,
+              "perfectCombo": true,
+              "maxCombo": 1,
+              "score": 200000,
+              "life": 1000,
+              "processed": 1,
+              "total": 5,
+              "lastJudgementNoteId": 0,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "normal great",
+          "action": {
+            "op": "tap",
+            "lane": 12,
+            "timeMs": 2043
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "judgement",
+                "noteId": 1,
+                "judgement": 4,
+                "timing": 2,
+                "diffMs": 43,
+                "judgedAtMs": 2043,
+                "combo": 2,
+                "maxCombo": 2,
+                "score": 360000,
+                "scoreDelta": 160000,
+                "life": 1000
+              }
+            ],
+            "snapshot": {
+              "timeMs": 2043,
+              "durationMs": 5000,
+              "activeLongLine": false,
+              "combo": 2,
+              "fullCombo": true,
+              "allPerfect": false,
+              "perfectCombo": false,
+              "maxCombo": 2,
+              "score": 360000,
+              "life": 1000,
+              "processed": 2,
+              "total": 5,
+              "lastJudgementNoteId": 1,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "normal first millisecond after great",
+          "action": {
+            "op": "update",
+            "timeMs": 3084
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "update"
+              }
+            ],
+            "snapshot": {
+              "timeMs": 3084,
+              "durationMs": 5000,
+              "activeLongLine": false,
+              "combo": 2,
+              "fullCombo": true,
+              "allPerfect": false,
+              "perfectCombo": false,
+              "maxCombo": 2,
+              "score": 360000,
+              "life": 1000,
+              "processed": 2,
+              "total": 5,
+              "lastJudgementNoteId": 1,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "normal good keeps combo",
+          "action": {
+            "op": "tap",
+            "lane": 12,
+            "timeMs": 3084
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "judgement",
+                "noteId": 2,
+                "judgement": 3,
+                "timing": 2,
+                "diffMs": 84,
+                "judgedAtMs": 3084,
+                "combo": 3,
+                "maxCombo": 3,
+                "score": 460000,
+                "scoreDelta": 100000,
+                "life": 1000
+              }
+            ],
+            "snapshot": {
+              "timeMs": 3084,
+              "durationMs": 5000,
+              "activeLongLine": false,
+              "combo": 3,
+              "fullCombo": true,
+              "allPerfect": false,
+              "perfectCombo": false,
+              "maxCombo": 3,
+              "score": 460000,
+              "life": 1000,
+              "processed": 3,
+              "total": 5,
+              "lastJudgementNoteId": 2,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "late-window crossing enters the terminal state",
+          "action": {
+            "op": "update",
+            "timeMs": 4131
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "update"
+              }
+            ],
+            "snapshot": {
+              "timeMs": 4131,
+              "durationMs": 5000,
+              "activeLongLine": false,
+              "combo": 3,
+              "fullCombo": true,
+              "allPerfect": false,
+              "perfectCombo": false,
+              "maxCombo": 3,
+              "score": 460000,
+              "life": 1000,
+              "processed": 3,
+              "total": 5,
+              "lastJudgementNoteId": 2,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "next update commits LastTiming",
+          "action": {
+            "op": "update",
+            "timeMs": 5002
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "judgement",
+                "noteId": 3,
+                "judgement": 1,
+                "timing": 5,
+                "diffMs": 2147483647,
+                "judgedAtMs": 5002,
+                "combo": 0,
+                "maxCombo": 3,
+                "score": 460000,
+                "scoreDelta": 0,
+                "life": 900
+              },
+              {
+                "type": "update"
+              }
+            ],
+            "snapshot": {
+              "timeMs": 5002,
+              "durationMs": 5000,
+              "activeLongLine": false,
+              "combo": 0,
+              "fullCombo": false,
+              "allPerfect": false,
+              "perfectCombo": false,
+              "maxCombo": 3,
+              "score": 460000,
+              "life": 900,
+              "processed": 4,
+              "total": 5,
+              "lastJudgementNoteId": 3,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "combo achievements do not recover after a break",
+          "action": {
+            "op": "tap",
+            "lane": 12,
+            "timeMs": 5002
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "judgement",
+                "noteId": 4,
+                "judgement": 5,
+                "timing": 2,
+                "diffMs": 2,
+                "judgedAtMs": 5002,
+                "combo": 1,
+                "maxCombo": 3,
+                "score": 660000,
+                "scoreDelta": 200000,
+                "life": 900
+              }
+            ],
+            "snapshot": {
+              "timeMs": 5002,
+              "durationMs": 5000,
+              "activeLongLine": false,
+              "combo": 1,
+              "fullCombo": false,
+              "allPerfect": false,
+              "perfectCombo": false,
+              "maxCombo": 3,
+              "score": 660000,
+              "life": 900,
+              "processed": 5,
+              "total": 5,
+              "lastJudgementNoteId": 4,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "flick-slide-end-and-trace-boundaries",
+      "mode": "play",
+      "chart": {
+        "version": 1,
+        "bpmChanges": [
+          {
+            "tick": 0,
+            "beat": 0,
+            "timeMs": 0,
+            "bpm": 120
+          }
+        ],
+        "signatureChanges": [
+          {
+            "tick": 0,
+            "beat": 0,
+            "timeMs": 0,
+            "numerator": 4,
+            "denominator": 4
+          }
+        ],
+        "timeScaleChanges": [],
+        "notes": [
+          {
+            "id": 0,
+            "tick": 480,
+            "timeMs": 1000,
+            "beat": 1,
+            "pos": 9,
+            "size": 6,
+            "laneX": 0,
+            "width": 0.5,
+            "operateType": 40,
+            "judgementType": 5,
+            "judgementAreaOffsetType": 4,
+            "direction": 0,
+            "critical": false,
+            "judged": true,
+            "visible": true,
+            "lineIds": [],
+            "slideAlong": false,
+            "indexInLine": null,
+            "easeL": null,
+            "easeR": null
+          },
+          {
+            "id": 1,
+            "tick": 960,
+            "timeMs": 2000,
+            "beat": 2,
+            "pos": 9,
+            "size": 6,
+            "laneX": 0,
+            "width": 0.5,
+            "operateType": 40,
+            "judgementType": 5,
+            "judgementAreaOffsetType": 4,
+            "direction": 0,
+            "critical": false,
+            "judged": true,
+            "visible": true,
+            "lineIds": [],
+            "slideAlong": false,
+            "indexInLine": null,
+            "easeL": null,
+            "easeR": null
+          },
+          {
+            "id": 2,
+            "tick": 1440,
+            "timeMs": 3000,
+            "beat": 3,
+            "pos": 9,
+            "size": 6,
+            "laneX": 0,
+            "width": 0.5,
+            "operateType": 20,
+            "judgementType": 10,
+            "judgementAreaOffsetType": 2,
+            "direction": 0,
+            "critical": false,
+            "judged": true,
+            "visible": true,
+            "lineIds": [
+              0
+            ],
+            "slideAlong": false,
+            "indexInLine": 0,
+            "easeL": 0,
+            "easeR": 0
+          },
+          {
+            "id": 3,
+            "tick": 1680,
+            "timeMs": 3500,
+            "beat": 3.5,
+            "pos": 9,
+            "size": 6,
+            "laneX": 0,
+            "width": 0.5,
+            "operateType": 22,
+            "judgementType": 11,
+            "judgementAreaOffsetType": 3,
+            "direction": 0,
+            "critical": false,
+            "judged": true,
+            "visible": true,
+            "lineIds": [
+              0
+            ],
+            "slideAlong": false,
+            "indexInLine": 1,
+            "easeL": 0,
+            "easeR": 0
+          },
+          {
+            "id": 4,
+            "tick": 2160,
+            "timeMs": 4500,
+            "beat": 4.5,
+            "pos": 9,
+            "size": 6,
+            "laneX": 0,
+            "width": 0.5,
+            "operateType": 20,
+            "judgementType": 10,
+            "judgementAreaOffsetType": 2,
+            "direction": 0,
+            "critical": false,
+            "judged": true,
+            "visible": true,
+            "lineIds": [
+              1
+            ],
+            "slideAlong": false,
+            "indexInLine": 0,
+            "easeL": 0,
+            "easeR": 0
+          },
+          {
+            "id": 5,
+            "tick": 2400,
+            "timeMs": 5000,
+            "beat": 5,
+            "pos": 9,
+            "size": 6,
+            "laneX": 0,
+            "width": 0.5,
+            "operateType": 22,
+            "judgementType": 11,
+            "judgementAreaOffsetType": 3,
+            "direction": 0,
+            "critical": false,
+            "judged": true,
+            "visible": true,
+            "lineIds": [
+              1
+            ],
+            "slideAlong": false,
+            "indexInLine": 1,
+            "easeL": 0,
+            "easeR": 0
+          },
+          {
+            "id": 6,
+            "tick": 2880,
+            "timeMs": 6000,
+            "beat": 6,
+            "pos": 9,
+            "size": 6,
+            "laneX": 0,
+            "width": 0.5,
+            "operateType": 60,
+            "judgementType": 21,
+            "judgementAreaOffsetType": 5,
+            "direction": 0,
+            "critical": false,
+            "judged": true,
+            "visible": true,
+            "lineIds": [],
+            "slideAlong": false,
+            "indexInLine": null,
+            "easeL": null,
+            "easeR": null
+          },
+          {
+            "id": 7,
+            "tick": 3360,
+            "timeMs": 7000,
+            "beat": 7,
+            "pos": 9,
+            "size": 6,
+            "laneX": 0,
+            "width": 0.5,
+            "operateType": 60,
+            "judgementType": 21,
+            "judgementAreaOffsetType": 5,
+            "direction": 0,
+            "critical": false,
+            "judged": true,
+            "visible": true,
+            "lineIds": [],
+            "slideAlong": false,
+            "indexInLine": null,
+            "easeL": null,
+            "easeR": null
+          }
+        ],
+        "lines": [
+          {
+            "id": 0,
+            "kind": "long",
+            "critical": false,
+            "noteIds": [
+              2,
+              3
+            ]
+          },
+          {
+            "id": 1,
+            "kind": "long",
+            "critical": false,
+            "noteIds": [
+              4,
+              5
+            ]
+          }
+        ],
+        "timeline": {
+          "skills": [],
+          "fever": [],
+          "callChanges": []
+        },
+        "durationMs": 7000
+      },
+      "steps": [
+        {
+          "label": "flick perfect early edge clock",
+          "action": {
+            "op": "update",
+            "timeMs": 917
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "update"
+              }
+            ],
+            "snapshot": {
+              "timeMs": 917,
+              "durationMs": 7000,
+              "activeLongLine": false,
+              "combo": 0,
+              "fullCombo": true,
+              "allPerfect": true,
+              "perfectCombo": false,
+              "maxCombo": 0,
+              "score": 0,
+              "life": 1000,
+              "processed": 0,
+              "total": 8,
+              "lastJudgementNoteId": null,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "flick perfect early edge",
+          "action": {
+            "op": "flick",
+            "lane": 12,
+            "timeMs": 917,
+            "vector": {
+              "dx": 0,
+              "dy": -1
+            }
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "judgement",
+                "noteId": 0,
+                "judgement": 5,
+                "timing": 1,
+                "diffMs": -83,
+                "judgedAtMs": 917,
+                "combo": 1,
+                "maxCombo": 1,
+                "score": 161290,
+                "scoreDelta": 161290,
+                "life": 1000
+              }
+            ],
+            "snapshot": {
+              "timeMs": 917,
+              "durationMs": 7000,
+              "activeLongLine": false,
+              "combo": 1,
+              "fullCombo": true,
+              "allPerfect": true,
+              "perfectCombo": true,
+              "maxCombo": 1,
+              "score": 161290,
+              "life": 1000,
+              "processed": 1,
+              "total": 8,
+              "lastJudgementNoteId": 0,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "flick first millisecond after late perfect",
+          "action": {
+            "op": "update",
+            "timeMs": 2059
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "update"
+              }
+            ],
+            "snapshot": {
+              "timeMs": 2059,
+              "durationMs": 7000,
+              "activeLongLine": false,
+              "combo": 1,
+              "fullCombo": true,
+              "allPerfect": true,
+              "perfectCombo": true,
+              "maxCombo": 1,
+              "score": 161290,
+              "life": 1000,
+              "processed": 1,
+              "total": 8,
+              "lastJudgementNoteId": 0,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "flick great",
+          "action": {
+            "op": "flick",
+            "lane": 12,
+            "timeMs": 2059,
+            "vector": {
+              "dx": 1,
+              "dy": -1
+            }
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "judgement",
+                "noteId": 1,
+                "judgement": 4,
+                "timing": 2,
+                "diffMs": 59,
+                "judgedAtMs": 2059,
+                "combo": 2,
+                "maxCombo": 2,
+                "score": 290323,
+                "scoreDelta": 129033,
+                "life": 1000
+              }
+            ],
+            "snapshot": {
+              "timeMs": 2059,
+              "durationMs": 7000,
+              "activeLongLine": false,
+              "combo": 2,
+              "fullCombo": true,
+              "allPerfect": false,
+              "perfectCombo": false,
+              "maxCombo": 2,
+              "score": 290323,
+              "life": 1000,
+              "processed": 2,
+              "total": 8,
+              "lastJudgementNoteId": 1,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "first long line start",
+          "action": {
+            "op": "update",
+            "timeMs": 3000
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "update"
+              }
+            ],
+            "snapshot": {
+              "timeMs": 3000,
+              "durationMs": 7000,
+              "activeLongLine": false,
+              "combo": 2,
+              "fullCombo": true,
+              "allPerfect": false,
+              "perfectCombo": false,
+              "maxCombo": 2,
+              "score": 290323,
+              "life": 1000,
+              "processed": 2,
+              "total": 8,
+              "lastJudgementNoteId": 1,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "claim first long line",
+          "action": {
+            "op": "tap",
+            "lane": 12,
+            "timeMs": 3000,
+            "pointerId": 11
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "judgement",
+                "noteId": 2,
+                "judgement": 6,
+                "timing": 0,
+                "diffMs": 0,
+                "judgedAtMs": 3000,
+                "combo": 3,
+                "maxCombo": 3,
+                "score": 661290,
+                "scoreDelta": 370967,
+                "life": 1000
+              }
+            ],
+            "snapshot": {
+              "timeMs": 3000,
+              "durationMs": 7000,
+              "activeLongLine": true,
+              "combo": 3,
+              "fullCombo": true,
+              "allPerfect": false,
+              "perfectCombo": false,
+              "maxCombo": 3,
+              "score": 661290,
+              "life": 1000,
+              "processed": 3,
+              "total": 8,
+              "lastJudgementNoteId": 2,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "slide end late perfect edge clock",
+          "action": {
+            "op": "update",
+            "timeMs": 3566
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "update"
+              }
+            ],
+            "snapshot": {
+              "timeMs": 3566,
+              "durationMs": 7000,
+              "activeLongLine": false,
+              "combo": 3,
+              "fullCombo": true,
+              "allPerfect": false,
+              "perfectCombo": false,
+              "maxCombo": 3,
+              "score": 661290,
+              "life": 1000,
+              "processed": 3,
+              "total": 8,
+              "lastJudgementNoteId": 2,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "slide end late perfect edge",
+          "action": {
+            "op": "release",
+            "lane": 12,
+            "timeMs": 3566,
+            "pointerId": 11
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "judgement",
+                "noteId": 3,
+                "judgement": 5,
+                "timing": 2,
+                "diffMs": 66,
+                "judgedAtMs": 3566,
+                "combo": 4,
+                "maxCombo": 4,
+                "score": 822581,
+                "scoreDelta": 161291,
+                "life": 1000
+              }
+            ],
+            "snapshot": {
+              "timeMs": 3566,
+              "durationMs": 7000,
+              "activeLongLine": false,
+              "combo": 4,
+              "fullCombo": true,
+              "allPerfect": false,
+              "perfectCombo": false,
+              "maxCombo": 4,
+              "score": 822581,
+              "life": 1000,
+              "processed": 4,
+              "total": 8,
+              "lastJudgementNoteId": 3,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "second long line start",
+          "action": {
+            "op": "update",
+            "timeMs": 4500
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "update"
+              }
+            ],
+            "snapshot": {
+              "timeMs": 4500,
+              "durationMs": 7000,
+              "activeLongLine": false,
+              "combo": 4,
+              "fullCombo": true,
+              "allPerfect": false,
+              "perfectCombo": false,
+              "maxCombo": 4,
+              "score": 822581,
+              "life": 1000,
+              "processed": 4,
+              "total": 8,
+              "lastJudgementNoteId": 3,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "claim second long line",
+          "action": {
+            "op": "tap",
+            "lane": 12,
+            "timeMs": 4500,
+            "pointerId": 12
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "judgement",
+                "noteId": 4,
+                "judgement": 6,
+                "timing": 0,
+                "diffMs": 0,
+                "judgedAtMs": 4500,
+                "combo": 5,
+                "maxCombo": 5,
+                "score": 1193548,
+                "scoreDelta": 370967,
+                "life": 1000
+              }
+            ],
+            "snapshot": {
+              "timeMs": 4500,
+              "durationMs": 7000,
+              "activeLongLine": true,
+              "combo": 5,
+              "fullCombo": true,
+              "allPerfect": false,
+              "perfectCombo": false,
+              "maxCombo": 5,
+              "score": 1193548,
+              "life": 1000,
+              "processed": 5,
+              "total": 8,
+              "lastJudgementNoteId": 4,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "slide end first millisecond after late perfect",
+          "action": {
+            "op": "update",
+            "timeMs": 5067
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "update"
+              }
+            ],
+            "snapshot": {
+              "timeMs": 5067,
+              "durationMs": 7000,
+              "activeLongLine": false,
+              "combo": 5,
+              "fullCombo": true,
+              "allPerfect": false,
+              "perfectCombo": false,
+              "maxCombo": 5,
+              "score": 1193548,
+              "life": 1000,
+              "processed": 5,
+              "total": 8,
+              "lastJudgementNoteId": 4,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "slide end great",
+          "action": {
+            "op": "release",
+            "lane": 12,
+            "timeMs": 5067,
+            "pointerId": 12
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "judgement",
+                "noteId": 5,
+                "judgement": 4,
+                "timing": 2,
+                "diffMs": 67,
+                "judgedAtMs": 5067,
+                "combo": 6,
+                "maxCombo": 6,
+                "score": 1322581,
+                "scoreDelta": 129033,
+                "life": 1000
+              }
+            ],
+            "snapshot": {
+              "timeMs": 5067,
+              "durationMs": 7000,
+              "activeLongLine": false,
+              "combo": 6,
+              "fullCombo": true,
+              "allPerfect": false,
+              "perfectCombo": false,
+              "maxCombo": 6,
+              "score": 1322581,
+              "life": 1000,
+              "processed": 6,
+              "total": 8,
+              "lastJudgementNoteId": 5,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "trace perfect early edge clock",
+          "action": {
+            "op": "update",
+            "timeMs": 5942
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "update"
+              }
+            ],
+            "snapshot": {
+              "timeMs": 5942,
+              "durationMs": 7000,
+              "activeLongLine": false,
+              "combo": 6,
+              "fullCombo": true,
+              "allPerfect": false,
+              "perfectCombo": false,
+              "maxCombo": 6,
+              "score": 1322581,
+              "life": 1000,
+              "processed": 6,
+              "total": 8,
+              "lastJudgementNoteId": 5,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "trace perfect early edge",
+          "action": {
+            "op": "trace",
+            "lane": 12,
+            "timeMs": 5942
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "judgement",
+                "noteId": 6,
+                "judgement": 5,
+                "timing": 1,
+                "diffMs": -58,
+                "judgedAtMs": 5942,
+                "combo": 7,
+                "maxCombo": 7,
+                "score": 1338710,
+                "scoreDelta": 16129,
+                "life": 1000
+              }
+            ],
+            "snapshot": {
+              "timeMs": 5942,
+              "durationMs": 7000,
+              "activeLongLine": false,
+              "combo": 7,
+              "fullCombo": true,
+              "allPerfect": false,
+              "perfectCombo": false,
+              "maxCombo": 7,
+              "score": 1338710,
+              "life": 1000,
+              "processed": 7,
+              "total": 8,
+              "lastJudgementNoteId": 6,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "trace first millisecond after late perfect",
+          "action": {
+            "op": "update",
+            "timeMs": 7067
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "update"
+              }
+            ],
+            "snapshot": {
+              "timeMs": 7067,
+              "durationMs": 7000,
+              "activeLongLine": false,
+              "combo": 7,
+              "fullCombo": true,
+              "allPerfect": false,
+              "perfectCombo": false,
+              "maxCombo": 7,
+              "score": 1338710,
+              "life": 1000,
+              "processed": 7,
+              "total": 8,
+              "lastJudgementNoteId": 6,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "trace miss inside the input window",
+          "action": {
+            "op": "trace",
+            "lane": 12,
+            "timeMs": 7067
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "judgement",
+                "noteId": 7,
+                "judgement": 1,
+                "timing": 2,
+                "diffMs": 67,
+                "judgedAtMs": 7067,
+                "combo": 0,
+                "maxCombo": 7,
+                "score": 1338710,
+                "scoreDelta": 0,
+                "life": 900
+              }
+            ],
+            "snapshot": {
+              "timeMs": 7067,
+              "durationMs": 7000,
+              "activeLongLine": false,
+              "combo": 0,
+              "fullCombo": false,
+              "allPerfect": false,
+              "perfectCombo": false,
+              "maxCombo": 7,
+              "score": 1338710,
+              "life": 900,
+              "processed": 8,
+              "total": 8,
+              "lastJudgementNoteId": 7,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "play-seek-and-reset",
+      "mode": "play",
+      "chart": {
+        "version": 1,
+        "bpmChanges": [
+          {
+            "tick": 0,
+            "beat": 0,
+            "timeMs": 0,
+            "bpm": 120
+          }
+        ],
+        "signatureChanges": [
+          {
+            "tick": 0,
+            "beat": 0,
+            "timeMs": 0,
+            "numerator": 4,
+            "denominator": 4
+          }
+        ],
+        "timeScaleChanges": [],
+        "notes": [
+          {
+            "id": 0,
+            "tick": 480,
+            "timeMs": 1000,
+            "beat": 1,
+            "pos": 9,
+            "size": 6,
+            "laneX": 0,
+            "width": 0.5,
+            "operateType": 1,
+            "judgementType": 1,
+            "judgementAreaOffsetType": 0,
+            "direction": 0,
+            "critical": false,
+            "judged": true,
+            "visible": true,
+            "lineIds": [],
+            "slideAlong": false,
+            "indexInLine": null,
+            "easeL": null,
+            "easeR": null
+          },
+          {
+            "id": 1,
+            "tick": 960,
+            "timeMs": 2000,
+            "beat": 2,
+            "pos": 9,
+            "size": 6,
+            "laneX": 0,
+            "width": 0.5,
+            "operateType": 1,
+            "judgementType": 1,
+            "judgementAreaOffsetType": 0,
+            "direction": 0,
+            "critical": false,
+            "judged": true,
+            "visible": true,
+            "lineIds": [],
+            "slideAlong": false,
+            "indexInLine": null,
+            "easeL": null,
+            "easeR": null
+          },
+          {
+            "id": 2,
+            "tick": 1440,
+            "timeMs": 3000,
+            "beat": 3,
+            "pos": 9,
+            "size": 6,
+            "laneX": 0,
+            "width": 0.5,
+            "operateType": 1,
+            "judgementType": 1,
+            "judgementAreaOffsetType": 0,
+            "direction": 0,
+            "critical": false,
+            "judged": true,
+            "visible": true,
+            "lineIds": [],
+            "slideAlong": false,
+            "indexInLine": null,
+            "easeL": null,
+            "easeR": null
+          }
+        ],
+        "lines": [],
+        "timeline": {
+          "skills": [],
+          "fever": [],
+          "callChanges": []
+        },
+        "durationMs": 3000
+      },
+      "steps": [
+        {
+          "label": "play first note clock",
+          "action": {
+            "op": "update",
+            "timeMs": 1000
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "update"
+              }
+            ],
+            "snapshot": {
+              "timeMs": 1000,
+              "durationMs": 3000,
+              "activeLongLine": false,
+              "combo": 0,
+              "fullCombo": true,
+              "allPerfect": true,
+              "perfectCombo": false,
+              "maxCombo": 0,
+              "score": 0,
+              "life": 1000,
+              "processed": 0,
+              "total": 3,
+              "lastJudgementNoteId": null,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "play first note",
+          "action": {
+            "op": "tap",
+            "lane": 12,
+            "timeMs": 1000
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "judgement",
+                "noteId": 0,
+                "judgement": 6,
+                "timing": 0,
+                "diffMs": 0,
+                "judgedAtMs": 1000,
+                "combo": 1,
+                "maxCombo": 1,
+                "score": 766667,
+                "scoreDelta": 766667,
+                "life": 1000
+              }
+            ],
+            "snapshot": {
+              "timeMs": 1000,
+              "durationMs": 3000,
+              "activeLongLine": false,
+              "combo": 1,
+              "fullCombo": true,
+              "allPerfect": true,
+              "perfectCombo": true,
+              "maxCombo": 1,
+              "score": 766667,
+              "life": 1000,
+              "processed": 1,
+              "total": 3,
+              "lastJudgementNoteId": 0,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "seek skips expired notes without scoring",
+          "action": {
+            "op": "seek",
+            "timeMs": 2500
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "reset"
+              }
+            ],
+            "snapshot": {
+              "timeMs": 2500,
+              "durationMs": 3000,
+              "activeLongLine": false,
+              "combo": 0,
+              "fullCombo": true,
+              "allPerfect": true,
+              "perfectCombo": false,
+              "maxCombo": 0,
+              "score": 0,
+              "life": 1000,
+              "processed": 2,
+              "total": 3,
+              "lastJudgementNoteId": null,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "advance to remaining note",
+          "action": {
+            "op": "update",
+            "timeMs": 3000
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "update"
+              }
+            ],
+            "snapshot": {
+              "timeMs": 3000,
+              "durationMs": 3000,
+              "activeLongLine": false,
+              "combo": 0,
+              "fullCombo": true,
+              "allPerfect": true,
+              "perfectCombo": false,
+              "maxCombo": 0,
+              "score": 0,
+              "life": 1000,
+              "processed": 2,
+              "total": 3,
+              "lastJudgementNoteId": null,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "remaining note is playable",
+          "action": {
+            "op": "tap",
+            "lane": 12,
+            "timeMs": 3000
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "judgement",
+                "noteId": 2,
+                "judgement": 6,
+                "timing": 0,
+                "diffMs": 0,
+                "judgedAtMs": 3000,
+                "combo": 1,
+                "maxCombo": 1,
+                "score": 766667,
+                "scoreDelta": 766667,
+                "life": 1000
+              }
+            ],
+            "snapshot": {
+              "timeMs": 3000,
+              "durationMs": 3000,
+              "activeLongLine": false,
+              "combo": 1,
+              "fullCombo": true,
+              "allPerfect": true,
+              "perfectCombo": true,
+              "maxCombo": 1,
+              "score": 766667,
+              "life": 1000,
+              "processed": 3,
+              "total": 3,
+              "lastJudgementNoteId": 2,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "reset clears all gameplay state",
+          "action": {
+            "op": "reset"
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "reset"
+              }
+            ],
+            "snapshot": {
+              "timeMs": 0,
+              "durationMs": 3000,
+              "activeLongLine": false,
+              "combo": 0,
+              "fullCombo": true,
+              "allPerfect": true,
+              "perfectCombo": false,
+              "maxCombo": 0,
+              "score": 0,
+              "life": 1000,
+              "processed": 0,
+              "total": 3,
+              "lastJudgementNoteId": null,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "judgement-state-transitions",
+      "mode": "play",
+      "chart": {
+        "version": 1,
+        "bpmChanges": [
+          {
+            "tick": 0,
+            "beat": 0,
+            "timeMs": 0,
+            "bpm": 120
+          }
+        ],
+        "signatureChanges": [
+          {
+            "tick": 0,
+            "beat": 0,
+            "timeMs": 0,
+            "numerator": 4,
+            "denominator": 4
+          }
+        ],
+        "timeScaleChanges": [],
+        "notes": [
+          {
+            "id": 0,
+            "tick": 480,
+            "timeMs": 1000,
+            "beat": 1,
+            "pos": 9,
+            "size": 6,
+            "laneX": 0,
+            "width": 0.5,
+            "operateType": 1,
+            "judgementType": 1,
+            "judgementAreaOffsetType": 0,
+            "direction": 0,
+            "critical": false,
+            "judged": true,
+            "visible": true,
+            "lineIds": [],
+            "slideAlong": false,
+            "indexInLine": null,
+            "easeL": null,
+            "easeR": null
+          },
+          {
+            "id": 1,
+            "tick": 960,
+            "timeMs": 2000,
+            "beat": 2,
+            "pos": 9,
+            "size": 6,
+            "laneX": 0,
+            "width": 0.5,
+            "operateType": 1,
+            "judgementType": 1,
+            "judgementAreaOffsetType": 0,
+            "direction": 0,
+            "critical": false,
+            "judged": true,
+            "visible": true,
+            "lineIds": [],
+            "slideAlong": false,
+            "indexInLine": null,
+            "easeL": null,
+            "easeR": null
+          },
+          {
+            "id": 2,
+            "tick": 1440,
+            "timeMs": 3000,
+            "beat": 3,
+            "pos": 9,
+            "size": 6,
+            "laneX": 0,
+            "width": 0.5,
+            "operateType": 1,
+            "judgementType": 1,
+            "judgementAreaOffsetType": 0,
+            "direction": 0,
+            "critical": false,
+            "judged": true,
+            "visible": true,
+            "lineIds": [],
+            "slideAlong": false,
+            "indexInLine": null,
+            "easeL": null,
+            "easeR": null
+          },
+          {
+            "id": 3,
+            "tick": 1920,
+            "timeMs": 4000,
+            "beat": 4,
+            "pos": 9,
+            "size": 6,
+            "laneX": 0,
+            "width": 0.5,
+            "operateType": 1,
+            "judgementType": 1,
+            "judgementAreaOffsetType": 0,
+            "direction": 0,
+            "critical": false,
+            "judged": true,
+            "visible": true,
+            "lineIds": [],
+            "slideAlong": false,
+            "indexInLine": null,
+            "easeL": null,
+            "easeR": null
+          },
+          {
+            "id": 4,
+            "tick": 2400,
+            "timeMs": 5000,
+            "beat": 5,
+            "pos": 9,
+            "size": 6,
+            "laneX": 0,
+            "width": 0.5,
+            "operateType": 1,
+            "judgementType": 1,
+            "judgementAreaOffsetType": 0,
+            "direction": 0,
+            "critical": false,
+            "judged": true,
+            "visible": true,
+            "lineIds": [],
+            "slideAlong": false,
+            "indexInLine": null,
+            "easeL": null,
+            "easeR": null
+          },
+          {
+            "id": 5,
+            "tick": 2880,
+            "timeMs": 6000,
+            "beat": 6,
+            "pos": 9,
+            "size": 6,
+            "laneX": 0,
+            "width": 0.5,
+            "operateType": 1,
+            "judgementType": 1,
+            "judgementAreaOffsetType": 0,
+            "direction": 0,
+            "critical": false,
+            "judged": true,
+            "visible": true,
+            "lineIds": [],
+            "slideAlong": false,
+            "indexInLine": null,
+            "easeL": null,
+            "easeR": null
+          },
+          {
+            "id": 6,
+            "tick": 3360,
+            "timeMs": 7000,
+            "beat": 7,
+            "pos": 9,
+            "size": 6,
+            "laneX": 0,
+            "width": 0.5,
+            "operateType": 1,
+            "judgementType": 1,
+            "judgementAreaOffsetType": 0,
+            "direction": 0,
+            "critical": false,
+            "judged": true,
+            "visible": true,
+            "lineIds": [],
+            "slideAlong": false,
+            "indexInLine": null,
+            "easeL": null,
+            "easeR": null
+          },
+          {
+            "id": 7,
+            "tick": 3840,
+            "timeMs": 8000,
+            "beat": 8,
+            "pos": 9,
+            "size": 6,
+            "laneX": 0,
+            "width": 0.5,
+            "operateType": 1,
+            "judgementType": 1,
+            "judgementAreaOffsetType": 0,
+            "direction": 0,
+            "critical": false,
+            "judged": true,
+            "visible": true,
+            "lineIds": [],
+            "slideAlong": false,
+            "indexInLine": null,
+            "easeL": null,
+            "easeR": null
+          }
+        ],
+        "lines": [],
+        "timeline": {
+          "skills": [],
+          "fever": [],
+          "callChanges": []
+        },
+        "durationMs": 8000
+      },
+      "steps": [
+        {
+          "label": "perfect starts AP and FC",
+          "action": {
+            "op": "simulate",
+            "noteId": 0,
+            "judgement": 5
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "judgement",
+                "noteId": 0,
+                "judgement": 5,
+                "timing": 0,
+                "diffMs": 0,
+                "judgedAtMs": 1000,
+                "combo": 1,
+                "maxCombo": 1,
+                "score": 125000,
+                "scoreDelta": 125000,
+                "life": 1000
+              }
+            ],
+            "snapshot": {
+              "timeMs": 0,
+              "durationMs": 8000,
+              "activeLongLine": false,
+              "combo": 1,
+              "fullCombo": true,
+              "allPerfect": true,
+              "perfectCombo": true,
+              "maxCombo": 1,
+              "score": 125000,
+              "life": 1000,
+              "processed": 1,
+              "total": 8,
+              "lastJudgementNoteId": 0,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "wait leaves achievements untouched",
+          "action": {
+            "op": "simulate",
+            "noteId": 1,
+            "judgement": 0
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "judgement",
+                "noteId": 1,
+                "judgement": 0,
+                "timing": 0,
+                "diffMs": 0,
+                "judgedAtMs": 2000,
+                "combo": 1,
+                "maxCombo": 1,
+                "score": 125000,
+                "scoreDelta": 0,
+                "life": 1000
+              }
+            ],
+            "snapshot": {
+              "timeMs": 0,
+              "durationMs": 8000,
+              "activeLongLine": false,
+              "combo": 1,
+              "fullCombo": true,
+              "allPerfect": true,
+              "perfectCombo": true,
+              "maxCombo": 1,
+              "score": 125000,
+              "life": 1000,
+              "processed": 2,
+              "total": 8,
+              "lastJudgementNoteId": 1,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "pass leaves achievements untouched",
+          "action": {
+            "op": "simulate",
+            "noteId": 2,
+            "judgement": 7
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "judgement",
+                "noteId": 2,
+                "judgement": 7,
+                "timing": 0,
+                "diffMs": 0,
+                "judgedAtMs": 3000,
+                "combo": 1,
+                "maxCombo": 1,
+                "score": 125000,
+                "scoreDelta": 0,
+                "life": 1000
+              }
+            ],
+            "snapshot": {
+              "timeMs": 0,
+              "durationMs": 8000,
+              "activeLongLine": false,
+              "combo": 1,
+              "fullCombo": true,
+              "allPerfect": true,
+              "perfectCombo": true,
+              "maxCombo": 1,
+              "score": 125000,
+              "life": 1000,
+              "processed": 3,
+              "total": 8,
+              "lastJudgementNoteId": 2,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "good keeps FC and permanently clears AP",
+          "action": {
+            "op": "simulate",
+            "noteId": 3,
+            "judgement": 3
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "judgement",
+                "noteId": 3,
+                "judgement": 3,
+                "timing": 0,
+                "diffMs": 0,
+                "judgedAtMs": 4000,
+                "combo": 2,
+                "maxCombo": 2,
+                "score": 187500,
+                "scoreDelta": 62500,
+                "life": 1000
+              }
+            ],
+            "snapshot": {
+              "timeMs": 0,
+              "durationMs": 8000,
+              "activeLongLine": false,
+              "combo": 2,
+              "fullCombo": true,
+              "allPerfect": false,
+              "perfectCombo": false,
+              "maxCombo": 2,
+              "score": 187500,
+              "life": 1000,
+              "processed": 4,
+              "total": 8,
+              "lastJudgementNoteId": 3,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "bad breaks combo and permanently clears FC",
+          "action": {
+            "op": "simulate",
+            "noteId": 4,
+            "judgement": 2
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "judgement",
+                "noteId": 4,
+                "judgement": 2,
+                "timing": 0,
+                "diffMs": 0,
+                "judgedAtMs": 5000,
+                "combo": 0,
+                "maxCombo": 2,
+                "score": 187500,
+                "scoreDelta": 0,
+                "life": 950
+              }
+            ],
+            "snapshot": {
+              "timeMs": 0,
+              "durationMs": 8000,
+              "activeLongLine": false,
+              "combo": 0,
+              "fullCombo": false,
+              "allPerfect": false,
+              "perfectCombo": false,
+              "maxCombo": 2,
+              "score": 187500,
+              "life": 950,
+              "processed": 5,
+              "total": 8,
+              "lastJudgementNoteId": 4,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "perfect after bad does not restore achievements",
+          "action": {
+            "op": "simulate",
+            "noteId": 5,
+            "judgement": 5
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "judgement",
+                "noteId": 5,
+                "judgement": 5,
+                "timing": 0,
+                "diffMs": 0,
+                "judgedAtMs": 6000,
+                "combo": 1,
+                "maxCombo": 2,
+                "score": 312500,
+                "scoreDelta": 125000,
+                "life": 950
+              }
+            ],
+            "snapshot": {
+              "timeMs": 0,
+              "durationMs": 8000,
+              "activeLongLine": false,
+              "combo": 1,
+              "fullCombo": false,
+              "allPerfect": false,
+              "perfectCombo": false,
+              "maxCombo": 2,
+              "score": 312500,
+              "life": 950,
+              "processed": 6,
+              "total": 8,
+              "lastJudgementNoteId": 5,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "miss breaks combo",
+          "action": {
+            "op": "simulate",
+            "noteId": 6,
+            "judgement": 1
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "judgement",
+                "noteId": 6,
+                "judgement": 1,
+                "timing": 0,
+                "diffMs": 0,
+                "judgedAtMs": 7000,
+                "combo": 0,
+                "maxCombo": 2,
+                "score": 312500,
+                "scoreDelta": 0,
+                "life": 850
+              }
+            ],
+            "snapshot": {
+              "timeMs": 0,
+              "durationMs": 8000,
+              "activeLongLine": false,
+              "combo": 0,
+              "fullCombo": false,
+              "allPerfect": false,
+              "perfectCombo": false,
+              "maxCombo": 2,
+              "score": 312500,
+              "life": 850,
+              "processed": 7,
+              "total": 8,
+              "lastJudgementNoteId": 6,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "just after miss does not restore achievements",
+          "action": {
+            "op": "simulate",
+            "noteId": 7,
+            "judgement": 6
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "judgement",
+                "noteId": 7,
+                "judgement": 6,
+                "timing": 0,
+                "diffMs": 0,
+                "judgedAtMs": 8000,
+                "combo": 1,
+                "maxCombo": 2,
+                "score": 600000,
+                "scoreDelta": 287500,
+                "life": 850
+              }
+            ],
+            "snapshot": {
+              "timeMs": 0,
+              "durationMs": 8000,
+              "activeLongLine": false,
+              "combo": 1,
+              "fullCombo": false,
+              "allPerfect": false,
+              "perfectCombo": false,
+              "maxCombo": 2,
+              "score": 600000,
+              "life": 850,
+              "processed": 8,
+              "total": 8,
+              "lastJudgementNoteId": 7,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "integer-clocks-input-phase-and-audio-cache",
+      "mode": "play",
+      "chart": {
+        "version": 1,
+        "bpmChanges": [
+          {
+            "tick": 0,
+            "beat": 0,
+            "timeMs": 0,
+            "bpm": 120
+          }
+        ],
+        "signatureChanges": [
+          {
+            "tick": 0,
+            "beat": 0,
+            "timeMs": 0,
+            "numerator": 4,
+            "denominator": 4
+          }
+        ],
+        "timeScaleChanges": [],
+        "notes": [],
+        "lines": [],
+        "timeline": {
+          "skills": [],
+          "fever": [],
+          "callChanges": []
+        },
+        "durationMs": 0
+      },
+      "steps": [
+        {
+          "label": "absolute event timestamps normalize to the monotonic 992ms epoch",
+          "action": {
+            "op": "normalizeRealtime",
+            "timeStamp": 1700000000992,
+            "currentRealtimeMs": 1200,
+            "timeOriginMs": 1700000000000
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "normalizedRealtime",
+                "realtimeMs": 992
+              }
+            ],
+            "snapshot": {
+              "timeMs": 0,
+              "durationMs": 0,
+              "activeLongLine": false,
+              "combo": 0,
+              "fullCombo": true,
+              "allPerfect": true,
+              "perfectCombo": false,
+              "maxCombo": 0,
+              "score": 0,
+              "life": 1000,
+              "processed": 0,
+              "total": 0,
+              "lastJudgementNoteId": null,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "sample floors frame realtime and truncates music time",
+          "action": {
+            "op": "clockSample",
+            "musicTimeMs": 992.999,
+            "realtimeMs": 500.999
+          },
+          "expect": {
+            "events": [],
+            "snapshot": {
+              "timeMs": 0,
+              "durationMs": 0,
+              "activeLongLine": false,
+              "combo": 0,
+              "fullCombo": true,
+              "allPerfect": true,
+              "perfectCombo": false,
+              "maxCombo": 0,
+              "score": 0,
+              "life": 1000,
+              "processed": 0,
+              "total": 0,
+              "lastJudgementNoteId": null,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "0.999ms remains on the lower integer boundary",
+          "action": {
+            "op": "clockTime",
+            "realtimeMs": 500.999,
+            "fallbackMusicTimeMs": -1
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "clockTime",
+                "timeMs": 992
+              }
+            ],
+            "snapshot": {
+              "timeMs": 0,
+              "durationMs": 0,
+              "activeLongLine": false,
+              "combo": 0,
+              "fullCombo": true,
+              "allPerfect": true,
+              "perfectCombo": false,
+              "maxCombo": 0,
+              "score": 0,
+              "life": 1000,
+              "processed": 0,
+              "total": 0,
+              "lastJudgementNoteId": null,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "1.001ms advances to the next integer boundary",
+          "action": {
+            "op": "clockTime",
+            "realtimeMs": 501.001,
+            "fallbackMusicTimeMs": -1
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "clockTime",
+                "timeMs": 993
+              }
+            ],
+            "snapshot": {
+              "timeMs": 0,
+              "durationMs": 0,
+              "activeLongLine": false,
+              "combo": 0,
+              "fullCombo": true,
+              "allPerfect": true,
+              "perfectCombo": false,
+              "maxCombo": 0,
+              "score": 0,
+              "life": 1000,
+              "processed": 0,
+              "total": 0,
+              "lastJudgementNoteId": null,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "canceled pointers release without a final flick sample",
+          "action": {
+            "op": "cancelInput"
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "tap",
+                "timeMs": 10
+              },
+              {
+                "type": "release",
+                "timeMs": 11,
+                "x": 0,
+                "lane": 0
+              }
+            ],
+            "snapshot": {
+              "timeMs": 0,
+              "durationMs": 0,
+              "activeLongLine": false,
+              "combo": 0,
+              "fullCombo": true,
+              "allPerfect": true,
+              "perfectCombo": false,
+              "maxCombo": 0,
+              "score": 0,
+              "life": 1000,
+              "processed": 0,
+              "total": 0,
+              "lastJudgementNoteId": null,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "ended pointers flick then release without a stationary press",
+          "action": {
+            "op": "endInput"
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "tap",
+                "timeMs": 10
+              },
+              {
+                "type": "flick",
+                "timeMs": 11
+              },
+              {
+                "type": "release",
+                "timeMs": 11,
+                "x": 100,
+                "lane": 10
+              }
+            ],
+            "snapshot": {
+              "timeMs": 0,
+              "durationMs": 0,
+              "activeLongLine": false,
+              "combo": 0,
+              "fullCombo": true,
+              "allPerfect": true,
+              "perfectCombo": false,
+              "maxCombo": 0,
+              "score": 0,
+              "life": 1000,
+              "processed": 0,
+              "total": 0,
+              "lastJudgementNoteId": null,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "sound info enables an empty sync cache",
+          "action": {
+            "op": "syncSoundInfo",
+            "available": true
+          },
+          "expect": {
+            "events": [],
+            "snapshot": {
+              "timeMs": 0,
+              "durationMs": 0,
+              "activeLongLine": false,
+              "combo": 0,
+              "fullCombo": true,
+              "allPerfect": true,
+              "perfectCombo": false,
+              "maxCombo": 0,
+              "score": 0,
+              "life": 1000,
+              "processed": 0,
+              "total": 0,
+              "lastJudgementNoteId": null,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "unavailable playback starts at minus one",
+          "action": {
+            "op": "syncRead",
+            "playbackUsable": false
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "syncTime",
+                "timeMs": -1
+              }
+            ],
+            "snapshot": {
+              "timeMs": 0,
+              "durationMs": 0,
+              "activeLongLine": false,
+              "combo": 0,
+              "fullCombo": true,
+              "allPerfect": true,
+              "perfectCombo": false,
+              "maxCombo": 0,
+              "score": 0,
+              "life": 1000,
+              "processed": 0,
+              "total": 0,
+              "lastJudgementNoteId": null,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "usable playback samples integer time",
+          "action": {
+            "op": "syncRead",
+            "playbackUsable": true,
+            "sampledTimeMs": 1000.999
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "syncTime",
+                "timeMs": 1000
+              }
+            ],
+            "snapshot": {
+              "timeMs": 0,
+              "durationMs": 0,
+              "activeLongLine": false,
+              "combo": 0,
+              "fullCombo": true,
+              "allPerfect": true,
+              "perfectCombo": false,
+              "maxCombo": 0,
+              "score": 0,
+              "life": 1000,
+              "processed": 0,
+              "total": 0,
+              "lastJudgementNoteId": null,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "seek explicitly updates the cached time",
+          "action": {
+            "op": "syncSeek",
+            "timeMs": 1017.999
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "syncTime",
+                "timeMs": 1017
+              }
+            ],
+            "snapshot": {
+              "timeMs": 0,
+              "durationMs": 0,
+              "activeLongLine": false,
+              "combo": 0,
+              "fullCombo": true,
+              "allPerfect": true,
+              "perfectCombo": false,
+              "maxCombo": 0,
+              "score": 0,
+              "life": 1000,
+              "processed": 0,
+              "total": 0,
+              "lastJudgementNoteId": null,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "unavailable playback retains the last valid time",
+          "action": {
+            "op": "syncRead",
+            "playbackUsable": false
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "syncTime",
+                "timeMs": 1017
+              }
+            ],
+            "snapshot": {
+              "timeMs": 0,
+              "durationMs": 0,
+              "activeLongLine": false,
+              "combo": 0,
+              "fullCombo": true,
+              "allPerfect": true,
+              "perfectCombo": false,
+              "maxCombo": 0,
+              "score": 0,
+              "life": 1000,
+              "processed": 0,
+              "total": 0,
+              "lastJudgementNoteId": null,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "clearing sound info resets the cache",
+          "action": {
+            "op": "syncSoundInfo",
+            "available": false
+          },
+          "expect": {
+            "events": [],
+            "snapshot": {
+              "timeMs": 0,
+              "durationMs": 0,
+              "activeLongLine": false,
+              "combo": 0,
+              "fullCombo": true,
+              "allPerfect": true,
+              "perfectCombo": false,
+              "maxCombo": 0,
+              "score": 0,
+              "life": 1000,
+              "processed": 0,
+              "total": 0,
+              "lastJudgementNoteId": null,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        },
+        {
+          "label": "cleared cache reads minus one",
+          "action": {
+            "op": "syncRead",
+            "playbackUsable": false
+          },
+          "expect": {
+            "events": [
+              {
+                "type": "syncTime",
+                "timeMs": -1
+              }
+            ],
+            "snapshot": {
+              "timeMs": 0,
+              "durationMs": 0,
+              "activeLongLine": false,
+              "combo": 0,
+              "fullCombo": true,
+              "allPerfect": true,
+              "perfectCombo": false,
+              "maxCombo": 0,
+              "score": 0,
+              "life": 1000,
+              "processed": 0,
+              "total": 0,
+              "lastJudgementNoteId": null,
+              "lastSkillIndex": null,
+              "callChangeIndex": null,
+              "feverState": 1,
+              "feverSectionIndex": null
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

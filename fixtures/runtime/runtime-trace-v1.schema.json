@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://haneoka.dev/schemas/cassiopeia/runtime-trace-v1.schema.json",
+  "title": "RuntimeTraceV1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["format", "version", "cases"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "format": { "const": "RuntimeTraceV1" },
+    "version": { "const": 1 },
+    "cases": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/case" }
+    }
+  },
+  "$defs": {
+    "case": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "mode", "chart", "steps"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "mode": { "enum": ["play", "watch", "chart"] },
+        "options": { "type": "object" },
+        "chart": { "type": "object" },
+        "steps": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/step" }
+        }
+      }
+    },
+    "step": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["action", "expect"],
+      "properties": {
+        "label": { "type": "string" },
+        "action": {
+          "type": "object",
+          "required": ["op"],
+          "properties": {
+            "op": { "enum": ["update", "finish", "tap", "flick", "release", "trace", "simulate", "clockSample", "clockTime", "normalizeRealtime", "cancelInput", "endInput", "syncSoundInfo", "syncRead", "syncSeek", "seek", "reset", "setOffset", "cancel"] },
+            "timeMs": { "type": "number" },
+            "musicTimeMs": { "type": "number" },
+            "realtimeMs": { "type": "number" },
+            "playbackRate": { "type": "number", "exclusiveMinimum": 0 },
+            "fallbackMusicTimeMs": { "type": "number" },
+            "timeStamp": { "type": "number" },
+            "currentRealtimeMs": { "type": "number" },
+            "timeOriginMs": { "type": "number" },
+            "available": { "type": "boolean" },
+            "playbackUsable": { "type": "boolean" },
+            "sampledTimeMs": { "type": "number" },
+            "lane": { "type": "number" },
+            "pointerId": { "type": "integer" },
+            "noteId": { "type": "integer" },
+            "judgement": { "type": "integer", "minimum": -1, "maximum": 7 },
+            "timing": { "type": "integer", "minimum": 0, "maximum": 6 },
+            "diffMs": { "type": "number" },
+            "milliseconds": { "type": "number" },
+            "vector": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["dx", "dy"],
+              "properties": {
+                "dx": { "type": "number" },
+                "dy": { "type": "number" }
+              }
+            }
+          }
+        },
+        "expect": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["events", "snapshot"],
+          "properties": {
+            "events": { "type": "array" },
+            "snapshot": { "type": "object" }
+          }
+        }
+      }
+    }
+  }
+}
