@@ -57,7 +57,7 @@ export class OurNotesInput {
     this.now = options.now ?? (() => performance.now());
     this.eventTime = options.eventTime ?? (() => this.now());
     this.dpi = options.screenDpi ?? 96;
-    this.flickDistanceCm = options.flickDistanceCm ?? 0.1;
+    this.flickDistanceCm = options.flickDistanceCm ?? 0.2;
     this.previousTouchAction = element.style.touchAction;
     element.style.touchAction = "none";
     element.addEventListener("pointerdown", this.onPointerDown, { passive: false });

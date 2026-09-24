@@ -3,7 +3,21 @@ import { readdir, readFile } from "node:fs/promises";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { ASSIST_AREA_OFFSET_TABLES, ASSIST_TIMING_TABLES, ChartSession, judge, JudgeTiming, JudgementAreaOffsetType, MusicTimeAnchor, MusicSyncTimeCache, nativeJudgementAreaOffsetX, normalizeEventRealtimeMs, normalizePlaybackRate, NoteJudgementType, NoteSimulateJudgement } from "@haneoka/cassiopeia";
+import {
+  ASSIST_AREA_OFFSET_TABLES,
+  ASSIST_TIMING_TABLES,
+  ChartSession,
+  judge,
+  JudgeTiming,
+  JudgementAreaOffsetType,
+  MusicTimeAnchor,
+  MusicSyncTimeCache,
+  nativeJudgementAreaOffsetX,
+  normalizeEventRealtimeMs,
+  normalizePlaybackRate,
+  NoteJudgementType,
+  NoteSimulateJudgement,
+} from "@haneoka/cassiopeia";
 import { OurNotesInput } from "../dist/index.js";
 import { RenderFrameBuilder } from "@haneoka/cassiopeia-plugin-our-notes";
 
@@ -131,8 +145,7 @@ function pointerExitEvents(type) {
       {
         tap: (point) => callbacks.push({ type: "tap", timeMs: point.timeMs }),
         move: (point) => callbacks.push({ type: "move", timeMs: point.timeMs }),
-        release: (point) =>
-          callbacks.push({ type: "release", timeMs: point.timeMs, x: point.x, lane: point.lane }),
+        release: (point) => callbacks.push({ type: "release", timeMs: point.timeMs, x: point.x, lane: point.lane }),
         flick: (point) => callbacks.push({ type: "flick", timeMs: point.timeMs }),
         cancel: (pointerId) => callbacks.push({ type: "cancel", pointerId }),
       },

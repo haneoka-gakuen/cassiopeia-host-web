@@ -27,7 +27,9 @@
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "check": "pnpm typecheck && pnpm build && pnpm test:runtime",
     "test:runtime": "node tests/runtime-trace.mjs && node tests/media-clock.mjs",
-    "benchmark": "node benchmarks/runtime.mjs"
+    "benchmark": "node benchmarks/runtime.mjs",
+    "format": "prettier --write . --ignore-unknown",
+    "format:check": "prettier --check . --ignore-unknown"
   },
   "peerDependencies": {
     "@haneoka/cassiopeia": "^0.1.0",
@@ -36,7 +38,8 @@
   "devDependencies": {
     "@types/node": "^26.1.0",
     "typescript": "^6.0.3",
-    "vite": "^7.3.6"
+    "vite": "^7.3.6",
+    "prettier": "3.7.4"
   },
   "engines": {
     "node": ">=24"
