@@ -38,14 +38,22 @@ const NATIVE_SOUND_TYPE_ORDER: ReadonlyArray<NoteSoundAssetKey> = [
 
 /** LiveSoundPlayer.GetJudgementSeType/GetTapSeType. */
 export function noteSoundForJudgement(event: Pick<JudgementEvent, "judgement" | "note">): NoteSoundAssetKey | null {
-  if (event.judgement === NoteSimulateJudgement.Good) return "good";
-  if (event.judgement === NoteSimulateJudgement.Great) return "great";
-  if (event.judgement === NoteSimulateJudgement.Just) return "just";
-  if (event.judgement !== NoteSimulateJudgement.Perfect) return null;
+  if (
+    event.judgement !== NoteSimulateJudgement.Good &&
+    event.judgement !== NoteSimulateJudgement.Great &&
+    event.judgement !== NoteSimulateJudgement.Perfect &&
+    event.judgement !== NoteSimulateJudgement.Just
+  ) {
+    return null;
+  }
   if (FLICK_TYPES.has(event.note.operateType)) {
     return event.note.direction === NoteDirection.Normal ? "flick" : "flickDirection";
   }
   if (TRACE_TYPES.has(event.note.operateType)) return "trace";
+  if (event.judgement === NoteSimulateJudgement.Good) return "good";
+  if (event.judgement === NoteSimulateJudgement.Great) return "great";
+  if (event.judgement === NoteSimulateJudgement.Just) return "just";
+  if (event.judgement !== NoteSimulateJudgement.Perfect) return null;
   return "perfect";
 }
 
@@ -97,19 +105,32 @@ export class NoteSoundPlayer {
     const context = (this.context ??= new AudioContext({ latencyHint: "interactive" }));
     const controller = new AbortController();
     this.loadController = controller;
+    const decodedByUrl = new Map<string, Promise<AudioBuffer | null>>();
+    const decode = (url: string): Promise<AudioBuffer | null> => {
+      const existing = decodedByUrl.get(url);
+      if (existing) return existing;
+      const pending = (async () => {
+        try {
+          const response = await fetch(url, { cache: "force-cache", signal: controller.signal });
+          if (!response.ok) return null;
+          const buffer = await context.decodeAudioData(await response.arrayBuffer());
+          return this.disposed ? null : buffer;
+        } catch {
+          // One unavailable optional layer must not disable the music player.
+          return null;
+        }
+      })();
+      decodedByUrl.set(url, pending);
+      return pending;
+    };
     this.loadPromise = Promise.all(
-      (Object.entries(this.assets) as Array<[NoteSoundAssetKey, NoteSoundAsset]>).map(async ([key, asset]) => {
+      NATIVE_SOUND_TYPE_ORDER.map(async (key) => {
+        const asset = this.assets[key];
+        if (!asset) return;
         const decoded = await Promise.all(
           layersOf(asset).map(async (layer) => {
-            try {
-              const response = await fetch(layer.url, { cache: "force-cache", signal: controller.signal });
-              if (!response.ok) return null;
-              const buffer = await context.decodeAudioData(await response.arrayBuffer());
-              return this.disposed ? null : { buffer, gain: layer.gain };
-            } catch {
-              // One unavailable optional layer must not disable the music player.
-              return null;
-            }
+            const buffer = await decode(layer.url);
+            return buffer ? { buffer, gain: layer.gain } : null;
           }),
         );
         const available = decoded.filter((layer): layer is { buffer: AudioBuffer; gain: number } => layer !== null);
@@ -117,6 +138,7 @@ export class NoteSoundPlayer {
       }),
     ).then(() => {
       if (this.loadController === controller) this.loadController = undefined;
+      if (!this.disposed && this.buffers.size === 0) throw new Error("No note sound resources could be loaded");
     });
     return this.loadPromise;
   }
