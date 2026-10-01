@@ -64,6 +64,7 @@ export class OurNotesInput {
     element.addEventListener("pointermove", this.onPointerMove, { passive: false });
     element.addEventListener("pointerup", this.onPointerUp, { passive: false });
     element.addEventListener("pointercancel", this.onPointerCancel, { passive: false });
+    element.addEventListener("lostpointercapture", this.onLostPointerCapture);
     element.addEventListener("contextmenu", this.preventDefault);
     element.addEventListener("dblclick", this.preventDefault);
     element.addEventListener("dragstart", this.preventDefault);
@@ -78,6 +79,7 @@ export class OurNotesInput {
     this.element.removeEventListener("pointermove", this.onPointerMove);
     this.element.removeEventListener("pointerup", this.onPointerUp);
     this.element.removeEventListener("pointercancel", this.onPointerCancel);
+    this.element.removeEventListener("lostpointercapture", this.onLostPointerCapture);
     this.element.removeEventListener("contextmenu", this.preventDefault);
     this.element.removeEventListener("dblclick", this.preventDefault);
     this.element.removeEventListener("dragstart", this.preventDefault);
@@ -113,8 +115,9 @@ export class OurNotesInput {
   }
 
   private readonly cancelAll = (): void => {
-    for (const pointerId of this.pointers.keys()) this.handlers.cancel?.(pointerId);
+    const pointerIds = [...this.pointers.keys()];
     this.pointers.clear();
+    for (const pointerId of pointerIds) this.handlers.cancel?.(pointerId);
   };
 
   private readonly onVisibilityChange = (): void => {
@@ -161,8 +164,10 @@ export class OurNotesInput {
         dx: rawDx,
         dy: rawDy,
       });
+      if (this.pointers.get(event.pointerId) !== state) return;
     }
     if (emitPress) this.handlers.move?.(point);
+    if (this.pointers.get(event.pointerId) !== state) return;
     state.previousX = point.x;
     state.previousY = point.y;
     state.previousLane = point.lane;
@@ -181,6 +186,10 @@ export class OurNotesInput {
     this.finishPointer(event, false);
   };
 
+  private readonly onLostPointerCapture = (event: PointerEvent): void => {
+    if (this.pointers.delete(event.pointerId)) this.handlers.cancel?.(event.pointerId);
+  };
+
   private finishPointer(event: PointerEvent, sampleMovement: boolean): void {
     this.preventPointerDefault(event);
     const state = this.pointers.get(event.pointerId);
@@ -189,11 +198,12 @@ export class OurNotesInput {
     // Both Ended and Canceled become PressExit. Only Ended also participates
     // in the final movement/flick sample.
     if (sampleMovement) this.samplePointerMovement(event, false);
+    if (this.pointers.get(event.pointerId) !== state) return;
     const latest = this.pointers.get(event.pointerId) ?? state;
     const point = sampleMovement
       ? { pointerId: latest.pointerId, x: latest.x, y: latest.y, lane: latest.lane, timeMs: latest.timeMs }
       : { pointerId: state.pointerId, x: state.x, y: state.y, lane: state.lane, timeMs: eventTimeMs };
-    this.handlers.release?.(point);
     this.pointers.delete(event.pointerId);
+    this.handlers.release?.(point);
   }
 }

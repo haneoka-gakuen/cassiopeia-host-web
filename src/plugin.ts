@@ -13,7 +13,6 @@ export function createWebHostPlugin() {
       id: "cassiopeia.host-web",
       version: "0.1.0",
       apiVersion: 1,
-      requires: ["cassiopeia.our-notes"],
       provides: [WEB_HOST.id],
     },
     setup(context) {
