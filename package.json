@@ -45,5 +45,16 @@
     "node": ">=24"
   },
   "packageManager": "pnpm@11.14.0",
-  "description": "Browser audio and pointer-input host for Cassiopeia"
+  "description": "Browser audio and pointer-input host for Cassiopeia",
+  "keywords": [
+    "cassiopeia",
+    "rhythm-game",
+    "web-audio",
+    "input",
+    "browser"
+  ],
+  "homepage": "https://github.com/haneoka-gakuen/cassiopeia-host-web#readme",
+  "bugs": {
+    "url": "https://github.com/haneoka-gakuen/cassiopeia-host-web/issues"
+  }
 }
