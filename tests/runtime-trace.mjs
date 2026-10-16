@@ -62,8 +62,8 @@ assert.deepStrictEqual(judge(NoteJudgementType.Normal, 130, 5), {
 });
 assert.deepStrictEqual(
   judge(NoteJudgementType.SlideBegin, 130, 5),
-  judge(NoteJudgementType.SlideBegin, 130, 0),
-  "Level-five SlideBegin keeps its dedicated fallback profile",
+  { judgement: NoteSimulateJudgement.Bad, timing: JudgeTiming.Late },
+  "Level-five SlideBegin uses the release assist boundaries",
 );
 assert.equal(nativeJudgementAreaOffsetX(JudgementAreaOffsetType.Default, 4, 0), 1);
 assert.equal(nativeJudgementAreaOffsetX(JudgementAreaOffsetType.Default, 4, 5), 1.5);
@@ -330,8 +330,8 @@ async function verifyConcurrentHudResults() {
   assert.deepStrictEqual(
     frame.hud?.judgements?.map(({ id, laneCenter, judgement }) => ({ id, laneCenter, judgement })),
     [
-      { id: 0, laneCenter: 2, judgement: "just" },
-      { id: 1, laneCenter: 22, judgement: "just" },
+      { id: 0, laneCenter: 2, judgement: "perfect" },
+      { id: 1, laneCenter: 22, judgement: "perfect" },
     ],
     "A simultaneous chord must retain one HUD result per lane slot",
   );

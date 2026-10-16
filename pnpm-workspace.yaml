@@ -1,7 +1,11 @@
 packages:
   - "."
+  - ".deps/cassiopeia"
+  - ".deps/our-notes"
 
 autoInstallPeers: false
+linkWorkspacePackages: true
 
 allowBuilds:
   esbuild: true
+  wasm-pack: true

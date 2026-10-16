@@ -32,10 +32,10 @@
     "format:check": "prettier --check . --ignore-unknown"
   },
   "peerDependencies": {
-    "@haneoka/cassiopeia": "^0.1.0",
-    "@haneoka/cassiopeia-plugin-our-notes": "^0.1.0"
+    "@haneoka/cassiopeia": "^0.1.0"
   },
   "devDependencies": {
+    "@haneoka/cassiopeia-plugin-our-notes": "^0.1.0",
     "@types/node": "^26.1.0",
     "typescript": "^6.0.3",
     "vite": "^7.3.6",
